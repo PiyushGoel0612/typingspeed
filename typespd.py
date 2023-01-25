@@ -1,6 +1,13 @@
 from tkinter import *
 import time
+import wordsList
+
 te='everytime i see someone spell a word wrong i look down at the keyboard and see how close the wrong letter is to the correct one'
+
+words = set(wordsList.words_list)
+
+for i in words:
+    print(i, end = " ")
 
 screen=Tk()
 
@@ -17,7 +24,7 @@ def tak(event):
     global lft,rig,l,disp,m
     key=event.char
     if l==1:
-        m=time.time()
+        m=time.perf_counter()
     if key==rig[0]:
         if (l+1)<len(te):
             if l>20:
@@ -39,8 +46,8 @@ def tak(event):
         else:
             lft=te[(l-20):(l-1)]
             rig=''
-            y=time.time()
-            disp=str(1560/(y-m))+' words per minute'
+            y=time.perf_counter()
+            disp=str((1560/(y-m)).__round__(2))+' words per minute'
             l1.config(text=lft)
             l2.config(text=rig)
             l4.config(text=disp)
