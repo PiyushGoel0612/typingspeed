@@ -4,10 +4,7 @@ import wordsList
 
 te='everytime i see someone spell a word wrong i look down at the keyboard and see how close the wrong letter is to the correct one'
 
-words = set(wordsList.words_list)
 
-for i in words:
-    print(i, end = " ")
 
 screen=Tk()
 
